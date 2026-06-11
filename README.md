@@ -448,12 +448,6 @@ Please create an issue before submitting major changes.
 
 ---
 
-## 📜 License
-
-This project is licensed under the MIT License.
-
----
-
 ## 🌍 Vision
 
 Our mission is simple:
