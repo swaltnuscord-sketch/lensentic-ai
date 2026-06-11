@@ -1,0 +1,36 @@
+# Node
+frontend/src/frontend/node_modules/
+dist/
+build/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Environment Variables
+.env
+.env.local
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Generated files
+storage/generated/
+storage/temp/
+
+# Supabase
+.supabase/
+
+# Python cache
+.pytest_cache/
+.mypy_cache/

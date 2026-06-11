@@ -1,0 +1,273 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "General Sans";
+  src: url("/assets/fonts/GeneralSans.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("/assets/fonts/SpaceGrotesk.woff2") format("woff2");
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --font-display: sans-serif;
+    --font-body: sans-serif;
+    --font-mono: monospace;
+    --radius: 0.625rem;
+
+    --background: 0.055 0.02 240;
+    --foreground: 0.95 0.01 240;
+    --card: 0.12 0.03 260;
+    --card-foreground: 0.93 0.01 240;
+    --popover: 0.15 0.04 270;
+    --popover-foreground: 0.92 0.01 240;
+
+    --primary: 0.6 0.22 255;
+    --primary-foreground: 0.95 0.01 240;
+
+    --secondary: 0.55 0.2 285;
+    --secondary-foreground: 0.95 0.01 240;
+    --muted: 0.2 0.02 240;
+    --muted-foreground: 0.65 0.02 240;
+
+    --accent: 0.5 0.25 285;
+    --accent-foreground: 0.95 0.01 240;
+
+    --destructive: 0.55 0.22 25;
+    --destructive-foreground: 0.95 0.01 240;
+
+    --border: 0.25 0.03 270;
+    --input: 0.18 0.03 260;
+    --ring: 0.6 0.22 255;
+
+    --chart-1: 0.65 0.22 40;
+    --chart-2: 0.6 0.12 185;
+    --chart-3: 0.4 0.07 227;
+    --chart-4: 0.83 0.19 84;
+    --chart-5: 0.77 0.19 70;
+
+    --sidebar: 0.1 0.02 240;
+    --sidebar-foreground: 0.93 0.01 240;
+    --sidebar-primary: 0.6 0.22 255;
+    --sidebar-primary-foreground: 0.95 0.01 240;
+    --sidebar-accent: 0.2 0.02 240;
+    --sidebar-accent-foreground: 0.8 0.02 240;
+    --sidebar-border: 0.22 0.03 265;
+    --sidebar-ring: 0.6 0.22 255;
+
+    --shadow-premium: 0 20px 60px oklch(0 0 0 / 0.35);
+    --shadow-glow: 0 0 40px oklch(0.6 0.22 255 / 0.2);
+    --shadow-subtle: 0 4px 12px oklch(0 0 0 / 0.15);
+  }
+
+  .dark {
+    --background: 0.055 0.02 240;
+    --foreground: 0.95 0.01 240;
+    --card: 0.12 0.03 260;
+    --card-foreground: 0.93 0.01 240;
+    --popover: 0.15 0.04 270;
+    --popover-foreground: 0.92 0.01 240;
+
+    --primary: 0.6 0.22 255;
+    --primary-foreground: 0.95 0.01 240;
+
+    --secondary: 0.55 0.2 285;
+    --secondary-foreground: 0.95 0.01 240;
+    --muted: 0.2 0.02 240;
+    --muted-foreground: 0.65 0.02 240;
+
+    --accent: 0.5 0.25 285;
+    --accent-foreground: 0.95 0.01 240;
+
+    --destructive: 0.55 0.22 25;
+    --destructive-foreground: 0.95 0.01 240;
+
+    --border: 0.25 0.03 270;
+    --input: 0.18 0.03 260;
+    --ring: 0.6 0.22 255;
+
+    --chart-1: 0.65 0.22 40;
+    --chart-2: 0.6 0.12 185;
+    --chart-3: 0.4 0.07 227;
+    --chart-4: 0.83 0.19 84;
+    --chart-5: 0.77 0.19 70;
+
+    --sidebar: 0.1 0.02 240;
+    --sidebar-foreground: 0.93 0.01 240;
+    --sidebar-primary: 0.6 0.22 255;
+    --sidebar-primary-foreground: 0.95 0.01 240;
+    --sidebar-accent: 0.2 0.02 240;
+    --sidebar-accent-foreground: 0.8 0.02 240;
+    --sidebar-border: 0.22 0.03 265;
+    --sidebar-ring: 0.6 0.22 255;
+  }
+
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+}
+
+@layer utilities {
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+@theme {
+  --font-display: "Space Grotesk";
+  --font-body: "General Sans";
+  --font-mono: "JetBrains Mono";
+}
+
+.glass-morphism {
+  @apply backdrop-blur-xl border;
+  border-color: oklch(var(--border) / 0.3);
+  background-color: transparent;
+}
+
+.neon-glow {
+  @apply shadow-lg;
+  box-shadow: 0 0 20px oklch(0.6 0.22 255 / 0.3);
+}
+
+.neon-glow-violet {
+  @apply shadow-lg;
+  box-shadow: 0 0 20px oklch(0.55 0.2 285 / 0.3);
+}
+
+.gradient-text {
+  background: linear-gradient(
+    135deg,
+    rgb(226 232 240),
+    rgb(0 212 255),
+    rgb(168 85 247)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.floating {
+  animation: floating 6s ease-in-out infinite;
+  will-change: transform;
+  animation-fill-mode: both;
+}
+
+@keyframes floating {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes aurora-pulse {
+  0%,
+  100% {
+    opacity: 0.18;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.28;
+    transform: scale(1.06);
+  }
+}
+
+@keyframes aurora-rotate {
+  from {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.1);
+  }
+  to {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+@keyframes text-shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+@keyframes scanline {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.03;
+  }
+  90% {
+    opacity: 0.03;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+@keyframes glow-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 12px rgba(0, 212, 255, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 24px rgba(0, 212, 255, 0.9), 0 0 48px rgba(0, 212, 255, 0.3);
+  }
+}
+
+@keyframes vignette-pulse {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 2s ease-in-out infinite;
+  animation-fill-mode: both;
+  will-change: box-shadow;
+}
+
+.text-shimmer {
+  background-size: 200% auto;
+  animation: text-shimmer 4s linear infinite;
+  animation-fill-mode: both;
+}
+
+.scanline-sweep::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0, 212, 255, 0.04) 50%,
+    transparent 100%
+  );
+  height: 60px;
+  width: 100%;
+  animation: scanline 8s linear infinite;
+  animation-fill-mode: both;
+  will-change: transform;
+  pointer-events: none;
+}
